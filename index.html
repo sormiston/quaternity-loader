@@ -1,31 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles/main.scss" />
+    <link id="spinner-1-styles" rel="stylesheet" href="src/styles/_spinner-1.scss" />
+    <script defer type="module" src="/src/scripts/main.js"></script>
     <title>Vite App</title>
   </head>
   <body>
-    <div class="canvas">
-      <div class="group1">
-        <svg class="circle" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="black"></circle>
-        </svg>
-        <svg class="circle" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="black"></circle>
-        </svg>
+    <div class="page" style="--spinner-height: 150px; --spinner-width: 150px">
+      <div class="spinner-demo-card" x-data="codeDemo('spinner-1')">
+        <div class="spinner-demo-card__top"></div>
+        <div class="spinner">
+          <div class="spinner__group1">
+            <svg class="spinner__circle" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="black"
+              ></circle>
+            </svg>
+            <svg class="spinner__circle" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="black"
+              ></circle>
+            </svg>
+          </div>
+          <div class="spinner__group2">
+            <svg class="spinner__circle" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="black"
+              ></circle>
+            </svg>
+            <svg class="spinner__circle" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="black"
+              ></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="spinner-demo-card__bottom">
+          <button @click="logCSS"
+          >
+            logCSS
+          </button>
+        </div>
+        <template x-if="codeDisplay.length" class="spinner-demo-card__modal">
+          <pre x-text="codeDisplay"></pre>
+        </div>
       </div>
-      <div class="group2">
-        <svg class="circle" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="black"></circle>
-        </svg>
-        <svg class="circle" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="black"></circle>
-        </svg>
-      </div>
-    
-     
     </div>
   </body>
 </html>
