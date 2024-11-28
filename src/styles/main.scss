@@ -1,4 +1,4 @@
-$animation-duration: 2s;
+$animation-duration: 1s;
 
 * {
   box-sizing: content-box;
@@ -30,33 +30,7 @@ svg.circle {
   border-radius: 100%;
   transform: translate(-50%, -50%);
   font-size: 10px;
-  // clip-path: transform-polygon(((0% 0%), (50% 0%), (50% 50%), (100% 50%), (100% 100%), (0% 100%)), -50%, -50%);
-
-  // clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 0% 0%);
-  // animation: circle-to-quarter-arc-clip-paths $animation-duration 1s cubic-bezier(.37, .41, .27, .98) infinite alternate;
-
-  // &:nth-child(1) {}
-
-  // &:nth-child(2) {
-  //   width: 30px;
-  //   height: 30px;
-  //   // transform: translate(-50%, -50%) rotate(90deg);
-  //   transform: rotate(90deg);
-  // }
-
-  // &:nth-child(3) {
-  //   width: 45px;
-  //   height: 45px;
-  //   // transform: translate(-50%, -50%) rotate(180deg);
-  //   transform: rotate(180deg);
-  // }
-
-  // &:nth-child(4) {
-  //   width: 60px;
-  //   height: 60px;
-  //   // transform: translate(-50%, -50%) rotate(270deg);
-  //   transform: rotate(270deg);
-  // }
+  
   circle {
     stroke-width: 1em;
     animation: dash $animation-duration cubic-bezier(.37, .41, .27, .98) infinite alternate;
@@ -64,14 +38,11 @@ svg.circle {
 }
 
 .group1 {
-
-  // animation: rotate-group1 $animation-duration * 4 1s cubic-bezier(.37, .41, .27, .98) infinite;
   .circle:nth-child(1) {
     font-size: 46px;
     width: 15px;
     height: 15px;
     transform: translate(-50%, -50%) rotate(0deg);
-    // transform: rotate(0deg);
   }
 
   ;
@@ -81,8 +52,6 @@ svg.circle {
     width: 45px;
     height: 45px;
     transform: translate(-50%, -50%) rotate(180deg);
-    // transform: rotate(180deg);
-
   }
 }
 
@@ -92,7 +61,6 @@ svg.circle {
     width: 30px;
     height: 30px;
     transform: translate(-50%, -50%) rotate(90deg);
-    // transform: rotate(90deg);
   }
 
   .circle:nth-child(2) {
@@ -100,27 +68,8 @@ svg.circle {
     width: 60px;
     height: 60px;
     transform: translate(-50%, -50%) rotate(270deg);
-    // transform: rotate(270deg);
   }
 }
-
-// @keyframes circle-to-quarter-arc-clip-paths {
-//   0% {
-//     // clip-path: transform-polygon(((0% 0%), (0% 100%), (100% 100%), (0% 0%), (0% 0%)), 0%, 0%);
-//     clip-path: $start-point-clip-path;
-//     // clip-path: inset(0);
-//     // transform-origin: -50% -50%;
-//     // scale: 7;
-//   }
-
-//   75% {
-//     clip-path: $end-point-clip-path;
-//   }
-
-//   100% {
-//     clip-path: $end-point-clip-path;
-//   }
-// }
 
 @keyframes rotate-group1 {
   0% {
@@ -175,6 +124,10 @@ svg.circle {
 
   70% {
     stroke-dasharray: 160;
+  }
+
+  90% {
+    stroke-dasharray: 285;
   }
 
   100% {
