@@ -28,8 +28,9 @@
 
 
   $animation-duration: 1s;
-  
-  .spinner__circle > circle {
-    animation: spinner-1 $animation-duration cubic-bezier(0.37, 0.41, 0.27, 0.98)
-    infinite alternate;
+  .spinner--spinner-1 {
+    .spinner__circle > circle {
+      animation: spinner-1 $animation-duration cubic-bezier(0.37, 0.41, 0.27, 0.98)
+      infinite alternate;
+    }
   }

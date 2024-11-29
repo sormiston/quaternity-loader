@@ -1,17 +1,147 @@
+@use "breakpoints" as *;
 
-* {
+*,
+:before,
+:after {
   box-sizing: content-box;
+}
+
+*:focus-visible {
+  box-shadow: 0 0 0 2px rgb(59 130 246 / 0.5) !important;
 }
 
 body {
   margin: 0;
 }
 
-.page {
-  padding: 16px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
+button {
+  all: unset;
+  cursor: pointer;
+  user-select: none;
+}
 
+.page {
+  padding: 16px;
+
+  @include respond-to(medium) {
+    padding: 32px;
+  }
+
+  @include respond-to(large) {
+    padding: 64px;
+  }
+
+  @include respond-to(xlarge) {
+    padding: 128px;
+  }
+}
+
+.spinner-demo-card {
+  width: fit-content;
+
+  &__bottom {
+    width: fit-content;
+    margin: 16px auto 0;
+  }
+}
+
+.modal {
+  &__container {
+    position: relative;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__toggle {
+    display: inline-flex;
+    position: relative;
+    border-radius: 9999px;
+    border-width: 2px;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.15);
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    align-items: center;
+    padding: 2px 4px;
+    height: 26px;
+    width: 40px;
+
+    &--css {
+      background-color: pink;
+    }
+
+    &--html {
+      background-color: gold;
+    }
+  }
+
+  &__toggleSwitch {
+    display: inline-block;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    transition-property: background-color, border-color, color, fill, stroke,
+      opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    height: 22px;
+    width: 22px;
+
+    &--active {
+      transform: translate(20px);
+    }
+  }
+
+  &__displayMode:nth-of-type(1).modal__displayMode--active {
+    text-shadow: 3px 4px 3px pink;
+  }
+
+  &__displayMode:nth-of-type(2).modal__displayMode--active {
+    text-shadow: 3px 4px 3px gold;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2px 4px;
+    font-size: 28px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 
 @keyframes rotate-group1 {
   0% {
@@ -50,5 +180,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
-
