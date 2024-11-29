@@ -1,0 +1,32 @@
+
+
+.spinner--spinner-2 {
+  .spinner__group1 .spinner-circle {
+    &:nth-child(1),
+    &:nth-child(2) {
+      transform: none;
+    }
+  }
+
+  $animation-duration: 1s;
+
+  .spinner__circle > circle {
+    stroke-dasharray: 100;
+    animation: spinner-2 $animation-duration ease-in infinite alternate;
+  }
+}
+
+@keyframes spinner-2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-60deg);
+    }
+}
+

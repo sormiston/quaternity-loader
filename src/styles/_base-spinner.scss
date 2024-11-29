@@ -8,7 +8,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      scale: 2.5;
+      scale: var(--spinner-scale, 2.5);
     }
   
     &__circle {

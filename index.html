@@ -18,19 +18,25 @@
     />
     <link rel="manifest" href="manifest/site.webmanifest" />
     <link rel="stylesheet" href="src/styles/main.scss" />
+    <link rel="stylesheet" href="src/styles/_base-spinner.scss" />
     <link
       id="spinner-1-styles"
       rel="stylesheet"
       href="src/styles/_spinner-1.scss"
     />
+    <link
+      rel="stylesheet"
+      id="spinner-2-styles"
+      href="src/styles/_spinner-2.scss"
+    />
     <script defer type="module" src="/src/scripts/main.js"></script>
-    <title>Vite App</title>
+    <title>Quaternity Loader</title>
   </head>
   <body>
     <div class="page" style="--spinner-height: 150px; --spinner-width: 150px">
+      <!-- SPINNER 1 -->
       <div class="spinner-demo-card" x-data>
         <div class="spinner-demo-card__top"></div>
-
         <div class="spinner spinner--spinner-1">
           <div class="spinner__group1">
             <svg class="spinner__circle" viewBox="0 0 100 100">
@@ -82,6 +88,61 @@
           </button>
         </div>
       </div>
+      <!-- SPINNER 2 -->
+      <div class="spinner-demo-card" x-data>
+        <div class="spinner-demo-card__top"></div>
+
+        <div class="spinner spinner--spinner-2">
+          <div class="spinner__group1">
+            <svg class="spinner__circle" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="black"
+              ></circle>
+            </svg>
+            <svg class="spinner__circle" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="black"
+              ></circle>
+            </svg>
+          </div>
+          <div class="spinner__group2">
+            <svg class="spinner__circle" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="black"
+              ></circle>
+            </svg>
+            <svg class="spinner__circle" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="black"
+              ></circle>
+            </svg>
+          </div>
+        </div>
+
+        <div class="spinner-demo-card__bottom">
+          <button
+            @click="$dispatch('show-code', { targetSelected: 'spinner-2'})"
+          >
+            Show Code
+          </button>
+        </div>
+      </div>
     </div>
 
     <dialog x-data="modal" @show-code.window="handleShowCode">
@@ -107,7 +168,7 @@
               :class="cssOrHtml === 'html' ? 'modal__toggleSwitch--active' : ''"
               class="modal__toggleSwitch"
             ></span>
-        </button>
+          </button>
 
           <h2
             class="modal__displayMode"
