@@ -12,7 +12,7 @@
 
   .spinner__circle > circle {
     stroke-dasharray: 100;
-    animation: spinner-2 $animation-duration ease-in infinite alternate;
+    animation: spinner-2 $animation-duration easeInOutCubic infinite alternate;
   }
 }
 
