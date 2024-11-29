@@ -11,13 +11,13 @@
   $animation-duration: 1s;
 
   .spinner__circle > circle {
-    stroke-dasharray: 100;
     animation: spinner-2 $animation-duration easeInOutCubic infinite alternate;
   }
 }
 
 @keyframes spinner-2 {
     0% {
+        stroke-dasharray: 283;
         transform: rotate(0deg);
     }
 
@@ -25,8 +25,13 @@
         transform: rotate(0deg);
     }
 
+    50% {
+        stroke-dasharray: 100;
+    }
+
     100% {
-        transform: rotate(-60deg);
+        transform: rotate(-45deg);
+        stroke-dasharray: 100;
     }
 }
 

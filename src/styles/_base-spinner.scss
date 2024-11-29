@@ -12,48 +12,42 @@
     }
   
     &__circle {
-      position: absolute;
-  
-      top: 50%;
-      left: 50%;
+      stroke-width: 1em;
       border-radius: 100%;
-      transform: translate(-50%, -50%);
-      font-size: 10px;
-  
-      circle {
-        stroke-width: 1em;
-      }
-    }
-  
-    &__group1 {
-      .spinner__circle:nth-child(1) {
+
+      &--1a {
         font-size: 46px;
         width: 15px;
         height: 15px;
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
       }
-  
-      .spinner__circle:nth-child(2) {
+
+      &--1b {
         font-size: 12px;
         width: 45px;
         height: 45px;
-        transform: translate(-50%, -50%) rotate(180deg);
+        transform: rotate(180deg);
       }
-    }
-  
-    &__group2 {
-      .spinner__circle:nth-child(1) {
+
+      &--2a {
         font-size: 18px;
         width: 30px;
         height: 30px;
-        transform: translate(-50%, -50%) rotate(90deg);
+        transform: rotate(90deg);
       }
-  
-      .spinner__circle:nth-child(2) {
+
+      &--2b {
         font-size: 8px;
         width: 60px;
-        height: 60px;
-        transform: translate(-50%, -50%) rotate(270deg);
+        height: 60px; 
+        transform: rotate(270deg);
       }
+    }
+
+    &__circle-transform-positioning {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
