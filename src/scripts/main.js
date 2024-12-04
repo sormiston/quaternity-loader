@@ -112,16 +112,17 @@ Alpine.data("modal", () => ({
     this.targetExample = targetSelected;
   },
 
-  closeModal() {
-    const rootEl = this.$root;
-    if (rootEl instanceof HTMLDialogElement) {
-      this.$root.close();
-    }
-
+  clearState() {
     this.targetExample = null;
     this.cssDisplay = null;
     this.htmlDisplay = null;
   },
+
+  handleNativeDialogClose() {
+    this.clearState();
+  },
+
+
 }));
 
 Alpine.start();

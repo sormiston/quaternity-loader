@@ -272,7 +272,11 @@
       </div>
     </div>
 
-    <dialog x-data="modal" @show-code.window="handleShowCode">
+    <dialog
+      x-data="modal"
+      @show-code.window="handleShowCode"
+      @close="handleNativeDialogClose"
+    >
       <div class="modal__container">
         <div class="modal__header">
           <h2
@@ -308,8 +312,9 @@
         <div class="modal__body">
           <pre class="modal__code" x-text="cssOrHtmlDisplay"></pre>
         </div>
-
-        <button @click="closeModal" class="modal__close">𝐗</button>
+        <form method="dialog">
+          <button class="modal__close">𝐗</button>
+        </form>
       </div>
     </dialog>
   </body>
