@@ -1,14 +1,14 @@
-.spinner {
+.q4-spinner {
     position: relative;
-    width: var(--spinner-width);
-    height: var(--spinner-height);
+    width: var(--q4-spinner-width);
+    height: var(--q4-spinner-height);
   
     &__group1,
     &__group2 {
       position: absolute;
       top: 50%;
       left: 50%;
-      scale: var(--spinner-scale, 2.5);
+      scale: var(--q4-spinner-scale, 2.5);
     }
   
     &__circle {

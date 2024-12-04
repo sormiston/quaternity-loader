@@ -85,7 +85,7 @@ Alpine.data("modal", () => ({
         }
 
         // GET HTML
-        const htmlElement = document.querySelector(`.spinner--${value}`);
+        const htmlElement = document.querySelector(`.q4-spinner--${value}`);
         if (htmlElement) {
           const html = htmlElement.outerHTML;
 

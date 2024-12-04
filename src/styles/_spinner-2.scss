@@ -1,7 +1,7 @@
 
 
-.spinner--spinner-2 {
-  .spinner__group1 .spinner-circle {
+.q4-spinner--spinner-2 {
+  .q4-spinner__group1 .q4-spinner-circle {
     &:nth-child(1),
     &:nth-child(2) {
       transform: none;
@@ -10,7 +10,7 @@
 
   $animation-duration: 1s;
 
-  .spinner__circle > circle {
+  .q4-spinner__circle > circle {
     animation: spinner-2 $animation-duration easeInOutCubic infinite alternate;
   }
 }

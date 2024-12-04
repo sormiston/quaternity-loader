@@ -1,4 +1,6 @@
 
+/* Spinner 1 */
+
 @keyframes spinner-1 {
     0% {
       stroke-dasharray: 10;
@@ -27,8 +29,8 @@
 
 
   $animation-duration: 1s;
-  .spinner--spinner-1 {
-    .spinner__circle > circle {
+  .q4-spinner--spinner-1 {
+    .q4-spinner__circle > circle {
       animation: spinner-1 $animation-duration easeInOutSine
       infinite alternate;
     }
