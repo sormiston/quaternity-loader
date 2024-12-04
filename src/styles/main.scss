@@ -31,6 +31,8 @@ button {
 
 .page {
   padding: 16px;
+  display: grid;
+  gap: 12px;
 
   @include respond-to(medium) {
     padding: 32px;

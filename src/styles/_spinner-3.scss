@@ -1,0 +1,94 @@
+@mixin spinner-steps($identifier, $start-angle) {
+  @keyframes #{$identifier} {
+    0% {
+      transform: rotate($start-angle);
+    }
+
+    12.5% {
+      transform: rotate($start-angle + 90deg);
+    }
+
+    25% {
+      transform: rotate($start-angle + 90deg);
+    }
+
+    37.5% {
+      transform: rotate($start-angle + 180deg);
+    }
+
+    50% {
+      transform: rotate($start-angle + 180deg);
+    }
+
+    62.5% {
+      transform: rotate($start-angle + 270deg);
+    }
+
+    75% {
+      transform: rotate($start-angle + 270deg);
+    }
+
+    87.5% {
+      transform: rotate($start-angle + 360deg);
+    }
+
+    100% {
+      transform: rotate($start-angle + 360deg);
+    }
+  }
+}
+
+@include spinner-steps(spinner-3-1a, 0deg);
+@include spinner-steps(spinner-3-1b, 180deg);
+@include spinner-steps(spinner-3-2a, 90deg);
+@include spinner-steps(spinner-3-2b, 270deg);
+
+
+  $total-path: 282.2865905761719;
+
+
+.q4-spinner--spinner-3 {
+  $animation-duration: 3s;
+
+  .q4-spinner__circle {
+    stroke-dasharray: $total-path;
+    stroke-dashoffset: $total-path * 0.75;
+    animation-duration: $animation-duration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .q4-spinner__circle--1a {
+    // transform: rotate(0deg);
+    animation-name: spinner-3-1a, pulse-dash-offset;
+  }
+
+  .q4-spinner__circle--1b {
+    animation-name: spinner-3-1b, pulse-dash-offset;
+  }
+
+  .q4-spinner__circle--2a {
+    animation-name: spinner-3-2a, pulse-dash-offset;
+    animation-direction: reverse;
+  }
+
+  .q4-spinner__circle--2b {
+    animation-name: spinner-3-2b, pulse-dash-offset;
+    animation-direction: reverse;
+  }
+}
+
+@keyframes pulse-dash-offset {
+  0% {
+    stroke-dashoffset: $total-path * 0.75;
+  }
+
+  50% {
+    stroke-dashoffset: $total-path * 0.25;
+  }
+
+  100% {
+    stroke-dashoffset: $total-path * 0.75;
+  }
+}
+
